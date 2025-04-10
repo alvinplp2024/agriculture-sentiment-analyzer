@@ -1,9 +1,13 @@
 import streamlit as st
 import joblib
+import os
 
-# Load model and vectorizer
-sentiment_model = joblib.load("sentiment_model.joblib")
-vectorizer = joblib.load("vectorizer.joblib")
+MODEL_PATH = os.path.join(os.path.dirname(__file__), "sentiment_model.joblib")
+sentiment_model = joblib.load(MODEL_PATH)
+
+MODEL_PATH2 = os.path.join(os.path.dirname(__file__), "vectorizer.joblib")
+vectorizer = joblib.load(MODEL_PATH2)
+
 
 # Custom CSS Styling
 st.markdown("""
